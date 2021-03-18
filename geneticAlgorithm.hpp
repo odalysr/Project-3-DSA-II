@@ -4,7 +4,7 @@
 
 #include"IO.hpp"
 #include<iostream>
-#include<fstream>
+
 
 class GeneticAlgorithm{
     private:
@@ -13,5 +13,6 @@ class GeneticAlgorithm{
         void loadData();
         void permute(int p);
         int factorial();
+        double cost();
 };
 #endif
