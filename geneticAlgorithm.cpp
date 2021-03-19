@@ -24,6 +24,16 @@ void geneticAlgorithm::swap(int &p, int &q){
     p = q; 
     q = temp;
 }
+string geneticAlgorithm::printS(){
+
+    s[0] = 0;
+    s[city +1] = 0;
+    string s;
+    for(int i = 0; i < city+1; i++){
+        s.push_back(s[i])
+    }
+    return s;
+}
 void geneticAlgorithm::permute(int permsThisCall){
     int m, k, p, q, i;
     //print function
@@ -38,11 +48,21 @@ void geneticAlgorithm::permute(int permsThisCall){
             k = k - 1;
         }
         swap(m,k);
+        p = m +1;
+        q = NUMLEMNTS - 1;
+        while(p < q){
+            swap(p,q);
+            p++;
+            q--;
+        }
+        //print function
     }
 }
 int geneticAlgorithm::factorial(){
     return (n==1 || n==0) ? 1: n * factorial(n - 1);
 }
+/*
 double geneticAlgorithm::cost(){
 
 }
+*/

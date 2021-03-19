@@ -16,7 +16,7 @@ class GeneticAlgorithm{
         void setCity(int city);
         int getCity();
         void swap(int &p, int &q);
-        void printS();
+        std::string printS();
         void permute(int permsThisCall);
         
         //int factorial();
