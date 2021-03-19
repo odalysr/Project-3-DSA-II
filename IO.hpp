@@ -11,10 +11,8 @@ class IO{//genetic algorithm
         void setTour(int tour);
         void setGeneration(int generation);
         void setPercent(double percent);
-        void setCity(int city);
         int getTour();
         int getGeneration();
         double getPercent();
-        int getCity();
 };
 #endif

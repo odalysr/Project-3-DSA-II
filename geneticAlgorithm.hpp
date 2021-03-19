@@ -9,10 +9,17 @@
 class GeneticAlgorithm{
     private:
         double arr[20][20];
+        double s[20];
+        int city;
     public:
         void loadData();
-        void permute(int p);
-        int factorial();
-        double cost();
+        void setCity(int city);
+        int getCity();
+        void swap(int &p, int &q);
+        void printS();
+        void permute(int permsThisCall);
+        
+        //int factorial();
+        //double cost();
 };
 #endif
