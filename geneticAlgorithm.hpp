@@ -9,7 +9,7 @@
 class GeneticAlgorithm{
     private:
         double arr[20][20];
-        double s[20];
+        double s[20];//an int array external to the funcition
         int city;
     public:
         void loadData();
