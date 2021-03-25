@@ -10,10 +10,6 @@ void IO::setGeneration(int generation){
 void IO::setPercent(double percent){
     this->percent = percent;
 }
-void IO::setCity(int city){
-    this->city = city;
-}
-
 //accessors
 int IO::getTour(){
     return this->tour;
@@ -23,7 +19,4 @@ int IO::getGeneration(){
 }
 double IO::getPercent(){
     return this->percent;
-}
-int IO::getCity(){
-    return this->city;
 }

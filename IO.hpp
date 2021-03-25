@@ -6,7 +6,6 @@ class IO{//genetic algorithm
         int tour;
         int generation;
         int percent;
-        int city;
     public:
         void setTour(int tour);
         void setGeneration(int generation);

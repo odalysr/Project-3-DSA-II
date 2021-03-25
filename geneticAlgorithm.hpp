@@ -16,10 +16,11 @@ class GeneticAlgorithm{
         void setCity(int city);
         int getCity();
         void swap(int &p, int &q);
+        void s();
+        //add print arr function
         std::string printS();
         void permute(int permsThisCall);
-        
-        //int factorial();
-        //double cost();
+        int factorial();
+        double cost();//find cost of permutation/tour
 };
 #endif

@@ -19,6 +19,11 @@ void geneticAlgorithm::loadData(){//fileHandling stuff
         }
     }
 }
+void geneticAlgorithm(){
+    for(int i = i; i < this->city; i++){
+        s[i] =i;
+    }
+}
 void geneticAlgorithm::swap(int &p, int &q){//swap function
     int temp;
     temp = p;
@@ -26,7 +31,7 @@ void geneticAlgorithm::swap(int &p, int &q){//swap function
     q = temp;
 }
 string geneticAlgorithm::printS(){//print the s array, thereby displaying the next permutation
-
+    //permutations start and end with 0
     s[0] = 0;
     s[city + 1] = 0;
 
@@ -37,6 +42,7 @@ string geneticAlgorithm::printS(){//print the s array, thereby displaying the ne
     }
     return str;//print str
 }
+//printArr function
 void geneticAlgorithm::permute(int permsThisCall){
     int m, k, p, q, i;
     //print function
@@ -66,8 +72,6 @@ void geneticAlgorithm::permute(int permsThisCall){
 int geneticAlgorithm::factorial(){
     return (n==1 || n==0) ? 1: n * factorial(n - 1);
 }
-/*
 double geneticAlgorithm::cost(){
-
+    
 }
-*/
