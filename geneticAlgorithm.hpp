@@ -12,15 +12,18 @@ class GeneticAlgorithm{
         double s[20];//an int array external to the funcition
         int city;
     public:
-        void loadData();
+        geneticAlgorithm();
+        void fileHandle();
+        void swap(int &p, int &q);
+        int factorial();
         void setCity(int city);
         int getCity();
-        void swap(int &p, int &q);
+        std::string printS();
+        
         void s();
         //add print arr function
         std::string printS();
         void permute(int permsThisCall);
-        int factorial();
         double cost();//find cost of permutation/tour
 };
 #endif

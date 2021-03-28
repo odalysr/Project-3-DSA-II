@@ -1,7 +1,12 @@
 #include"geneticAlgorithm.hpp"
 using namespace std;
 
-void geneticAlgorithm::loadData(){//fileHandling stuff
+void geneticAlgorithm::geneticAlgorithm(){
+    for(int i = i; i < this->city; i++){
+        s[i] =i;
+    }
+}
+void geneticAlgorithm::FileHandle(){//fileHandling stuff
     ifstream inFile;
     inFile.open("distances.txt");
 
@@ -19,16 +24,21 @@ void geneticAlgorithm::loadData(){//fileHandling stuff
         }
     }
 }
-void geneticAlgorithm(){
-    for(int i = i; i < this->city; i++){
-        s[i] =i;
-    }
-}
+
 void geneticAlgorithm::swap(int &p, int &q){//swap function
     int temp;
     temp = p;
     p = q; 
     q = temp;
+}
+int geneticAlgorithm::factorial(){
+    return (n==1 || n==0) ? 1: n * factorial(n - 1);
+}
+void setCity(int city){
+    this->city = city;
+}
+int get city(){
+    return this->city;
 }
 string geneticAlgorithm::printS(){//print the s array, thereby displaying the next permutation
     //permutations start and end with 0
@@ -68,9 +78,6 @@ void geneticAlgorithm::permute(int permsThisCall){
         }
         printS();
     }
-}
-int geneticAlgorithm::factorial(){
-    return (n==1 || n==0) ? 1: n * factorial(n - 1);
 }
 double geneticAlgorithm::cost(){
     
