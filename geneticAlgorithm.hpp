@@ -19,11 +19,9 @@ class GeneticAlgorithm{
         void setCity(int city);
         int getCity();
         std::string printS();
-        
-        void s();
-        //add print arr function
-        std::string printS();
         void permute(int permsThisCall);
-        double cost();//find cost of permutation/tour
+
+        double getCost(string array);//find cost of permutation/tour
+        //void printArray();
 };
 #endif

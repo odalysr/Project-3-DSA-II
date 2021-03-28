@@ -40,6 +40,7 @@ void setCity(int city){
 int get city(){
     return this->city;
 }
+
 string geneticAlgorithm::printS(){//print the s array, thereby displaying the next permutation
     //permutations start and end with 0
     s[0] = 0;
@@ -48,7 +49,7 @@ string geneticAlgorithm::printS(){//print the s array, thereby displaying the ne
     string str;
 
     for(int i = 0; i < city+1; i++){
-        str.push_back(s[i]) << endl;
+        str.push_back(s[i]);
     }
     return str;//print str
 }
@@ -79,6 +80,18 @@ void geneticAlgorithm::permute(int permsThisCall){
         printS();
     }
 }
-double geneticAlgorithm::cost(){
-    
+//get cost of specific tour
+double geneticAlgorithm::getCost(string array){
+    //find cost
+
+    double cost;
+    int tempArr[city];//create a temp array
+
+    for(int i =0; i < array.length(); i++){
+        tempArr[i] = array[i]; //initialize temp array to parameter array
+    }
+    for(int j = 0; j < city; j++){
+        cost = arr[tempArr[j]][tempArr[j+1]] + cost;//iterate over arr and add cost of each element to cost variable
+    }
+    return cost;//return 
 }
