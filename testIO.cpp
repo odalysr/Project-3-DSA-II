@@ -5,10 +5,9 @@ using namespace std;
 int main(){
     IO obj;
 
-    obj.setTour(10);
-    obj.setGeneration(2);
-    obj.setPercent(.20);
-    obj.setCity(5);
+    obj.setTours(10);
+    obj.setGenerations(2);
+    obj.setPercent(20.1);
 /*
     cout << obj.getTour();
     cout << obj.getGeneration();

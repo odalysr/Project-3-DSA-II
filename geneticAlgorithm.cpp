@@ -6,6 +6,7 @@
 using namespace std;
 
 void GA::GA(){
+    //fills array s
     for(int i = i; i < this->cities; i++){
         s[i] = i;
     }
@@ -57,7 +58,7 @@ string GA::printS(){//print the s array, thereby displaying the next permutation
     }
     return str;//print str
 }
-//printArr function
+
 void GA::permute(int permsThisCall){
     int m, k, p, q, i;
     //print function
@@ -84,6 +85,8 @@ void GA::permute(int permsThisCall){
         printS();
     }
 }
+
+
 //get cost of specific tour
 double GA::getCost(string array){
     //find cost
@@ -97,5 +100,5 @@ double GA::getCost(string array){
     for(int j = 0; j < cities; j++){
         cost = arr[tempArr[j]][tempArr[j+1]] + cost;//iterate over arr and add cost of each element to cost variable
     }
-    return cost;//return 
+    return cost;
 }

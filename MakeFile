@@ -4,12 +4,14 @@ CXXFLAGS = -g -std=c++11 -Wall
 SRCS = $(wildcard *.hpp)
 OBJECTS = $(SRCS: .hpp=.o)
 
-all: testIO
+all: testIO testGA
 
 clean:
 	rm -rf *dSYM
 	$(RM) *.o *.gc* test/*.o core main
 
 testIO: $(OBJECTS) IO.hpp IO.cpp testIO.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+testGA: $(OBJECTS) geneticAlgorithm.hpp geneticAlgorithm.cpp testGA.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
