@@ -1,9 +1,13 @@
-#include"GA.hpp"
+#include"geneticAlgorithm.hpp"
+#include<iostream>
+#include<fstream>
+#include<string>
+
 using namespace std;
 
 void GA::GA(){
-    for(int i = i; i < this->city; i++){
-        s[i] =i;
+    for(int i = i; i < this->cities; i++){
+        s[i] = i;
     }
 }
 void GA::FileHandle(){//fileHandling stuff
@@ -34,21 +38,21 @@ void GA::swap(int &p, int &q){//swap function
 int GA::factorial(){
     return (n==1 || n==0) ? 1: n * factorial(n - 1);
 }
-void GA::setCity(int city){
-    this->city = city;
+void GA::setcities(int cities){
+    this->cities = cities;
 }
-int GA::getCity(){
-    return this->city;
+int GA::getCities(){
+    return this->cities;
 }
 
 string GA::printS(){//print the s array, thereby displaying the next permutation
     //permutations start and end with 0
     s[0] = 0;
-    s[city + 1] = 0;
+    s[cities + 1] = 0;
 
     string str;
 
-    for(int i = 0; i < city+1; i++){
+    for(int i = 0; i < cities+1; i++){
         str.push_back(s[i]);
     }
     return str;//print str
@@ -58,7 +62,7 @@ void GA::permute(int permsThisCall){
     int m, k, p, q, i;
     //print function
     printS();
-    NUMELEMNTS = this->city; //NUMELEMNTS is the number of ints in the s array that you're permutating
+    NUMELEMNTS = this->cities; //NUMELEMNTS is the number of ints in the s array that you're permutating
 
     for(int i = 1; i < permsThisCall; i++){
         m = NUMELEMNTS - 2;
@@ -85,12 +89,12 @@ double GA::getCost(string array){
     //find cost
 
     double cost;
-    int tempArr[city];//create a temp array
+    int tempArr[cities];//create a temp array
 
     for(int i =0; i < array.length(); i++){
         tempArr[i] = array[i]; //initialize temp array to parameter array
     }
-    for(int j = 0; j < city; j++){
+    for(int j = 0; j < cities; j++){
         cost = arr[tempArr[j]][tempArr[j+1]] + cost;//iterate over arr and add cost of each element to cost variable
     }
     return cost;//return 

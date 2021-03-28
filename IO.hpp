@@ -3,15 +3,15 @@
 
 class IO{//genetic algorithm
     private:
-        int tour;
-        int generation;
+        int tours;
+        int generations;
         int percent;
     public:
-        void setTour(int tour);
-        void setGeneration(int generation);
+        void setTours(int tours);
+        void setGenerations(int generations);
         void setPercent(double percent);
-        int getTour();
-        int getGeneration();
+        int getTours();
+        int getGenerations();
         double getPercent();
 };
 #endif
