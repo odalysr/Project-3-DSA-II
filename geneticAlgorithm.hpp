@@ -6,13 +6,13 @@
 #include<iostream>
 
 
-class GeneticAlgorithm{
+class GA{
     private:
         double arr[20][20];
         double s[20];//an int array external to the funcition
         int city;
     public:
-        geneticAlgorithm();
+        GA();
         void fileHandle();
         void swap(int &p, int &q);
         int factorial();

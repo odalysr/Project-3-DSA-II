@@ -1,12 +1,12 @@
-#include"geneticAlgorithm.hpp"
+#include"GA.hpp"
 using namespace std;
 
-void geneticAlgorithm::geneticAlgorithm(){
+void GA::GA(){
     for(int i = i; i < this->city; i++){
         s[i] =i;
     }
 }
-void geneticAlgorithm::FileHandle(){//fileHandling stuff
+void GA::FileHandle(){//fileHandling stuff
     ifstream inFile;
     inFile.open("distances.txt");
 
@@ -25,23 +25,23 @@ void geneticAlgorithm::FileHandle(){//fileHandling stuff
     }
 }
 
-void geneticAlgorithm::swap(int &p, int &q){//swap function
+void GA::swap(int &p, int &q){//swap function
     int temp;
     temp = p;
     p = q; 
     q = temp;
 }
-int geneticAlgorithm::factorial(){
+int GA::factorial(){
     return (n==1 || n==0) ? 1: n * factorial(n - 1);
 }
-void setCity(int city){
+void GA::setCity(int city){
     this->city = city;
 }
-int get city(){
+int GA::getCity(){
     return this->city;
 }
 
-string geneticAlgorithm::printS(){//print the s array, thereby displaying the next permutation
+string GA::printS(){//print the s array, thereby displaying the next permutation
     //permutations start and end with 0
     s[0] = 0;
     s[city + 1] = 0;
@@ -54,7 +54,7 @@ string geneticAlgorithm::printS(){//print the s array, thereby displaying the ne
     return str;//print str
 }
 //printArr function
-void geneticAlgorithm::permute(int permsThisCall){
+void GA::permute(int permsThisCall){
     int m, k, p, q, i;
     //print function
     printS();
@@ -81,7 +81,7 @@ void geneticAlgorithm::permute(int permsThisCall){
     }
 }
 //get cost of specific tour
-double geneticAlgorithm::getCost(string array){
+double GA::getCost(string array){
     //find cost
 
     double cost;
