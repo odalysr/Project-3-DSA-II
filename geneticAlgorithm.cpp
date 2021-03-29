@@ -8,12 +8,14 @@
 
 using namespace std;
 
-void GA::GA(){
+void GA::GA(int city, int pop, int gen, double perc){
     //fills array s
+    this->n = pop;
+    this->numGens = gen;
+    this->cities = city;
+    this->prob = perc;
     srand(time(0));
-    for(int i = i; i < this->cities; i++){
-        s[i] = i;
-    }
+    //May have to init first tour
 }
 void GA::FileHandle(){//fileHandling stuff
     ifstream inFile;
@@ -50,9 +52,9 @@ int GA::getCities(){
     return this->cities;
 }
 
-string GA::printS(){//print the s array, thereby displaying the next permutation
+void GA::printS(){//print the s array, thereby displaying the next permutation
     //permutations start and end with 0
-    s[0] = 0;
+    /*s[0] = 0;
     s[cities + 1] = 0;
 
     string str;
@@ -60,7 +62,11 @@ string GA::printS(){//print the s array, thereby displaying the next permutation
     for(int i = 0; i < cities+1; i++){
         str.push_back(s[i]);
     }
-    return str;//print str
+    return str;//print str*/
+    for(int i: initialTour){
+        cout << i << " ";
+    }
+    cout << endl;
 }
 
 void GA::permute(int permsThisCall){
@@ -116,9 +122,6 @@ void GA::mutate(vector<int> array){
     int a = 1+(rand()%(array.size()-1));
     int b = 1+(rand()%(array.size()-1));
     swap(array.at(a),array.at(b));
-    if(getCost(array) < getCost(temp)){
-        //replace worst with array
-    }
 }
 
 void GA::elite(){ //get two elites
@@ -142,11 +145,18 @@ void GA::elite(){ //get two elites
     elite1 = min1;
     elite2 = min2;
 }
-void GA::poor(){
+int GA::poor(){
     vector<int> max1;
     int c = -1;
-
-    
+    int i = 0;
+    for(vector<int> path: perms){
+        if(getCost(path) > c){ 
+            max1 = path;
+            c = getCost(path);
+            i++;
+        }
+    }
+    return i;
 }
 void GA::setPop(int n){
     this->n = n;
@@ -154,6 +164,16 @@ void GA::setPop(int n){
  void GA::getNumGens(int numGens){
 this->numGens = numGens;
  }
+
+void bestElite(){//best elite and replaces with poor of population
+    int c1 = getCost(elite1);
+    int c2 = getCost(elite2);
+    if(c1 < c2)
+        perms.at(poor()) = elite1;
+    else    
+        perms.at(poor()) = elite2;
+}
+
 void GA::compute(){
     //initialize popultation
     for(int i = 0; i < cities; i++)
@@ -170,9 +190,11 @@ void GA::compute(){
             mutate(elite1);
             mutate(elite2);
         }
+        bestElite();
         tempGens--;
     }
-
+    bestElite();
+    printS();
 }
 
 

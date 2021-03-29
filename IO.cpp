@@ -20,3 +20,11 @@ int IO::getGenerations(){
 double IO::getPercent(){
     return this->percent;
 }
+
+void IO::setPop(int n){
+    this->population = n;
+}
+
+int IO::getPop(){
+    return this->population;
+}

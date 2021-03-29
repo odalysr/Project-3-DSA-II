@@ -15,3 +15,5 @@ testIO: $(OBJECTS) IO.hpp IO.cpp testIO.cpp
 testGA: $(OBJECTS) geneticAlgorithm.hpp geneticAlgorithm.cpp testGA.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
+main: $(OBJECTS) main.cpp IO.hpp IO.cpp geneticAlgorithm.hpp geneticAlgorithm.cpp 
+	$(CXX) $(CXXFLAGS) -o $@ $^

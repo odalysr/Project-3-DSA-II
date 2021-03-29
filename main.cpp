@@ -1,6 +1,7 @@
 
 #include"IO.hpp"
 #include"geneticAlgorithm.hpp"
+#include "bruteForce.hpp"
 #include<iostream>
 #include<string>
 
@@ -16,11 +17,12 @@ percent of optimal (eg: 120%) that the ga produced
 int main(){
 
     IO objIO;
-    GA objGA;
+    //GA objGA;
 
     int cities;
     int tours;
     int generations;
+    double prob;
 
     //user input
     cout << "Enter the number of cities:" << endl;
@@ -30,38 +32,27 @@ int main(){
     cout <<"Enter the number of generations:" << endl;
     cin >> generations;
     cout << "Enter the percentage each mutation:" <<endl;
+    cin >> prob;
+
 
     //setters
-    objGA.setCities(cities);
-    objIO.setTours(tours);
+    objIO.setTours(cities);
+    objIO.setPop(tours);
     objIO.setGenerations(generations);
-    objIO.setPercent();
+    objIO.setPercent(prob);
 
+    GA objGA = GA(objIO.getTours(),objIO.getPop(), objIO.getGenerations(), objIO.getPercent());
     objGA.fileHandle(); //initialize arr;
+    objGA.compute();
 
     cout << endl << endl << endl;
  
-    //get number of cities 
-    cout << "Number of cities to run: " << objGA.getCities() << endl;
-
-    //timer
-    struct timeval *t;
-    t = (struct timeval *)malloc(sizeof(struct timeval));
-    gettimeofday(t,NULL);
-    time_t startSec = t->tv_sec;
-
+    BF objBF = BF(objIO.getTours());
+    objBF.run();
    //compute num of required mutated tours
    
-   int mutations = objIO.getTours() * objIO.getPercent() /100; //percent of muated tours
 
-
-
-    //COMPUTE NUM OF MUTATIONS
     
-    //get elites from each generation
-    for( int i =0 ; i < 2 ; i ++){
-
-    }
 
     
 
