@@ -51,7 +51,11 @@ int main(){
     time_t startSec = t->tv_sec;
 
    //compute num of required mutated tours
+   
    int mutations = objIO.getTours() * objIO.getPercent() /100; //percent of muated tours
+
+
+
     //COMPUTE NUM OF MUTATIONS
     
     //get elites from each generation
